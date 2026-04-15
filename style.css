@@ -1,24 +1,17 @@
-/* MAIN SIDE-BY-SIDE */
 .main {
   display: flex;
+  flex-direction: row;   /* 🔥 FORCE SIDE BY SIDE */
   justify-content: center;
   align-items: flex-start;
   gap: 30px;
   padding: 40px;
-  flex-wrap: wrap; /* responsive */
 }
-
 /* CARDS */
 .card {
-  width: 100%;
-  max-width: 400px;
-  padding: 25px;
-  border-radius: 16px;
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(15px);
-  box-shadow: 0 0 30px rgba(0,0,0,0.4);
+  flex: 1;              /* 🔥 both take equal space */
+  max-width: 500px;     /* control size */
+  min-width: 300px;
 }
-
 /* RIGHT SIDE BIGGER */
 .right {
   max-width: 450px;
