@@ -7,7 +7,7 @@ document.getElementById("emailForm").addEventListener("submit", function(e) {
   let recipient = document.getElementById("recipient").value;
   let details = document.getElementById("details").value;
 
-  fetch("http://localhost:5001/generate", {
+  fetch("http://localhost:5002/generate", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"

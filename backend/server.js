@@ -161,6 +161,29 @@ Your Name`;
   return { subject, body };
 }
 
+const mongoose = require("mongoose");   // ✅ here
+
+
+
+
+// 🔥 CONNECT DATABASE (PLACE HERE)
+mongoose.connect("mongodb://mattapallymeghana2006_db_user:meghana756@ac-itxlemv-shard-00-00.nbivznn.mongodb.net:27017,ac-itxlemv-shard-00-01.nbivznn.mongodb.net:27017,ac-itxlemv-shard-00-02.nbivznn.mongodb.net:27017/emailDB?ssl=true&replicaSet=atlas-hzk8rl-shard-0&authSource=admin&retryWrites=true&w=majority")
+  .then(() => console.log("MongoDB Connected ✅"))
+  .catch(err => console.log(err));
+const EmailSchema = new mongoose.Schema({
+  type: String,
+  tone: String,
+  recipient: String,
+  details: String,
+  subject: String,
+  body: String,
+  createdAt: {
+    type: Date,
+    default: Date.now
+  }
+});
+
+const Email = mongoose.model("Email", EmailSchema);
 /* =========================
    Routes
 ========================= */
@@ -173,7 +196,7 @@ app.get("/health", (req, res) => {
   res.json({ status: "OK", uptime: process.uptime() });
 });
 
-app.post("/generate", (req, res) => {
+app.post("/generate", async (req, res) => {
   const { type, tone, recipient, details } = req.body;
 
   if (!type || !recipient || !details) {
@@ -182,6 +205,18 @@ app.post("/generate", (req, res) => {
 
   const email = generateEmail(type, tone, recipient, details);
 
+  // 🔥 SAVE TO DATABASE
+  const newEmail = new Email({
+    type,
+    tone,
+    recipient,
+    details,
+    subject: email.subject,
+    body: email.body
+  });
+
+  await newEmail.save();
+
   res.json(email);
 });
 
@@ -189,7 +224,7 @@ app.post("/generate", (req, res) => {
    Start Server
 ========================= */
 
-const PORT = 5001;
+const PORT = 5002;
 
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
