@@ -3,66 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <title>Smart Email Generator</title>
+
+  <!-- Modern Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="container">
+<div class="main">
+  <div class="card">
 
-  <h1>📧 Smart Email Generator</h1>
-  <p>Create professional emails instantly</p>
+    <h1>✨ Smart Email Generator</h1>
+    <p>Create professional emails instantly</p>
 
-  <form id="emailForm">
+    <form id="emailForm">
 
-    <!-- Email Type -->
-    <label>Email Type</label>
-    <select id="type">
-      <option>Leave Request</option>
-      <option>Apology</option>
-      <option>Thank You</option>
-      <option>Invitation</option>
-      <option>Meeting</option>
-      <option>Complaint</option>
-      <option>Resignation</option>
-      <option>Follow-up</option>
-    </select>
+      <!-- Email Type -->
+      <label>Email Type</label>
+      <select id="type">
+        <option>Leave Request</option>
+        <option>Apology</option>
+        <option>Thank You</option>
+        <option>Invitation</option>
+        <option>Meeting</option>
+        <option>Complaint</option>
+        <option>Resignation</option>
+        <option>Follow-up</option>
+      </select>
 
-    <!-- Tone -->
-    <label>Tone</label>
-    <select id="tone">
-      <option>Professional</option>
-      <option>Friendly</option>
-      <option>Formal</option>
-    </select>
+      <!-- Tone -->
+      <label>Tone</label>
+      <select id="tone">
+        <option>Professional</option>
+        <option>Friendly</option>
+        <option>Formal</option>
+      </select>
 
-    <!-- Subject -->
-    <label>Subject (optional)</label>
-    <input type="text" id="subject" placeholder="Enter subject">
+      <!-- Subject -->
+      <label>Subject (optional)</label>
+      <input type="text" id="subject" placeholder="Enter subject">
 
-    <!-- Recipient -->
-    <label>Recipient</label>
-    <input type="text" id="recipient" placeholder="e.g., Manager / Sir / HR">
+      <!-- Recipient -->
+      <label>Recipient</label>
+      <input type="text" id="recipient" placeholder="e.g., Manager / Sir / HR">
 
-    <!-- Details -->
-    <label>Details</label>
-    <textarea id="details" placeholder="Enter details here..."></textarea>
+      <!-- Details -->
+      <label>Details</label>
+      <textarea id="details" placeholder="Enter details here..."></textarea>
 
-    <button type="submit">Generate Email</button>
+      <button type="submit">Generate Email 🚀</button>
 
-  </form>
+    </form>
 
-  <!-- Output -->
-  <div class="output">
-    <h3>Subject</h3>
-    <p id="outSubject"></p>
+    <!-- Output -->
+    <div class="output">
+      <h3>Subject</h3>
+      <p id="outSubject"></p>
 
-    <h3>Body</h3>
-    <pre id="outBody"></pre>
+      <h3>Body</h3>
+      <pre id="outBody"></pre>
 
-    <button onclick="copyEmail()">Copy Email</button>
+      <button onclick="copyEmail()">Copy Email 📋</button>
+    </div>
+
   </div>
-
 </div>
 
 <script src="script.js"></script>

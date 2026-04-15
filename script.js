@@ -3,10 +3,11 @@ document.getElementById("emailForm").addEventListener("submit", function(e) {
 
   let type = document.getElementById("type").value;
   let tone = document.getElementById("tone").value;
-  let subject = document.getElementById("subject").value;
   let recipient = document.getElementById("recipient").value;
   let details = document.getElementById("details").value;
 
+  fetch("https://devops-project-96a8.onrender.com/generate") // 🔥 CHANGE THIS
+  .then(() => {}) // dummy to avoid lint
   fetch("https://devops-project-96a8.onrender.com/generate", {
     method: "POST",
     headers: {
@@ -21,15 +22,12 @@ document.getElementById("emailForm").addEventListener("submit", function(e) {
   })
   .then(res => res.json())
   .then(data => {
-
-    let finalSubject = subject ? subject : data.subject;
-
-    document.getElementById("outSubject").innerText = finalSubject;
+    document.getElementById("outSubject").innerText = data.subject;
     document.getElementById("outBody").innerText = data.body;
   });
 });
 
-// Copy button
+// Copy
 function copyEmail() {
   let text =
     document.getElementById("outSubject").innerText + "\n\n" +
