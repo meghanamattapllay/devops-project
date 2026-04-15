@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Email Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>📧 Smart Email Generator</h1>
+  <p>Create professional emails instantly</p>
+
+  <form id="emailForm">
+
+    <!-- Email Type -->
+    <label>Email Type</label>
+    <select id="type">
+      <option>Leave Request</option>
+      <option>Apology</option>
+      <option>Thank You</option>
+      <option>Invitation</option>
+      <option>Meeting</option>
+      <option>Complaint</option>
+      <option>Resignation</option>
+      <option>Follow-up</option>
+    </select>
+
+    <!-- Tone -->
+    <label>Tone</label>
+    <select id="tone">
+      <option>Professional</option>
+      <option>Friendly</option>
+      <option>Formal</option>
+    </select>
+
+    <!-- Subject -->
+    <label>Subject (optional)</label>
+    <input type="text" id="subject" placeholder="Enter subject">
+
+    <!-- Recipient -->
+    <label>Recipient</label>
+    <input type="text" id="recipient" placeholder="e.g., Manager / Sir / HR">
+
+    <!-- Details -->
+    <label>Details</label>
+    <textarea id="details" placeholder="Enter details here..."></textarea>
+
+    <button type="submit">Generate Email</button>
+
+  </form>
+
+  <!-- Output -->
+  <div class="output">
+    <h3>Subject</h3>
+    <p id="outSubject"></p>
+
+    <h3>Body</h3>
+    <pre id="outBody"></pre>
+
+    <button onclick="copyEmail()">Copy Email</button>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
