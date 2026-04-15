@@ -40,8 +40,36 @@ select, input, textarea {
   border-radius: 10px;
   border: none;
   background: rgba(255,255,255,0.08);
-  color:black;
+  color: white;                 /* 🔥 FIX TEXT */
   font-size: 14px;
+  outline: none;                /* 🔥 REMOVE WHITE BORDER */
+}
+
+/* 🔥 FIX INPUT CLICK (FOCUS STATE) */
+select:focus,
+input:focus,
+textarea:focus {
+  background: rgba(255,255,255,0.12);
+  color: white;
+  outline: none;
+  box-shadow: 0 0 0 2px #6366f1;  /* glow effect */
+}
+
+/* 🔥 PLACEHOLDER COLOR */
+input::placeholder,
+textarea::placeholder {
+  color: #94a3b8;
+}
+
+/* 🔥 DROPDOWN OPTIONS FIX */
+option {
+  background-color: black;
+  color: white;
+}
+
+option:checked {
+  background-color: black;
+  color: white;
 }
 
 /* BUTTON */
