@@ -1,61 +1,55 @@
-<div class="main">
+<div class="container">
 
-  <!-- LEFT SIDE (FORM) -->
-  <div class="card left">
+  <h1>✨ Smart Email Generator</h1>
+  <p>Create professional emails instantly</p>
 
-    <h1>✨ Smart Email Generator</h1>
-    <p>Create professional emails instantly</p>
+  <!-- FORM -->
+  <form id="emailForm">
 
-    <form id="emailForm">
+    <label>Email Type</label>
+    <select id="type">
+      <option>Leave Request</option>
+      <option>Apology</option>
+      <option>Thank You</option>
+      <option>Invitation</option>
+      <option>Meeting</option>
+      <option>Complaint</option>
+      <option>Resignation</option>
+      <option>Follow-up</option>
+    </select>
 
-      <label>Email Type</label>
-      <select id="type">
-        <option>Leave Request</option>
-        <option>Apology</option>
-        <option>Thank You</option>
-        <option>Invitation</option>
-        <option>Meeting</option>
-        <option>Complaint</option>
-        <option>Resignation</option>
-        <option>Follow-up</option>
-      </select>
+    <label>Tone</label>
+    <select id="tone">
+      <option>Professional</option>
+      <option>Friendly</option>
+      <option>Formal</option>
+    </select>
 
-      <label>Tone</label>
-      <select id="tone">
-        <option>Professional</option>
-        <option>Friendly</option>
-        <option>Formal</option>
-      </select>
+    <label>Subject (optional)</label>
+    <input type="text" id="subject" placeholder="Enter subject">
 
-      <label>Subject (optional)</label>
-      <input type="text" id="subject" placeholder="Enter subject">
+    <label>Recipient</label>
+    <input type="text" id="recipient" placeholder="e.g., Manager / Sir / HR">
 
-      <label>Recipient</label>
-      <input type="text" id="recipient" placeholder="e.g., Manager / Sir / HR">
+    <label>Details</label>
+    <textarea id="details" placeholder="Enter details here..."></textarea>
 
-      <label>Details</label>
-      <textarea id="details" placeholder="Enter details here..."></textarea>
+    <button type="submit">Generate Email 🚀</button>
 
-      <button type="submit">Generate Email 🚀</button>
+  </form>
 
-    </form>
-
-  </div>
-
-  <!-- RIGHT SIDE (OUTPUT) -->
-  <div class="card right">
+  <!-- RESULT (HIDDEN INITIALLY) -->
+  <div id="resultSection" class="result hidden">
 
     <h2>📨 Generated Email</h2>
 
-    <div class="output">
-      <h3>Subject</h3>
-      <p id="outSubject"></p>
+    <h3>Subject</h3>
+    <p id="outSubject"></p>
 
-      <h3>Body</h3>
-      <pre id="outBody"></pre>
+    <h3>Body</h3>
+    <pre id="outBody"></pre>
 
-      <button onclick="copyEmail()">Copy Email 📋</button>
-    </div>
+    <button onclick="copyEmail()">Copy Email 📋</button>
 
   </div>
 

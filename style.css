@@ -5,49 +5,22 @@ body {
   color: white;
 }
 
-/* 🔥 FORCE SIDE BY SIDE */
-.main {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 40px;
-  padding: 40px;
-  width: 100%;
-}
-
-/* CARDS */
-.card {
-  width: 45%;              /* 🔥 KEY FIX */
-  min-width: 350px;
+/* CENTER */
+.container {
   max-width: 500px;
-  padding: 25px;
-  border-radius: 16px;
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(15px);
-  box-shadow: 0 0 30px rgba(0,0,0,0.4);
+  margin: auto;
+  padding: 30px;
 }
 
-/* HEADINGS */
-h1, h2 {
-  text-align: center;
-}
-
-p {
-  text-align: center;
-  color: #94a3b8;
-}
-
-/* LABEL */
-label {
-  margin-top: 10px;
-  display: block;
+/* FORM */
+form {
+  display: flex;
+  flex-direction: column;
 }
 
 /* INPUTS */
 select, input, textarea {
-  width: 100%;
-  margin-top: 6px;
+  margin-top: 10px;
   padding: 12px;
   border-radius: 10px;
   border: none;
@@ -57,7 +30,6 @@ select, input, textarea {
 
 /* BUTTON */
 button {
-  width: 100%;
   margin-top: 15px;
   padding: 12px;
   border-radius: 10px;
@@ -67,21 +39,19 @@ button {
   cursor: pointer;
 }
 
-button:hover {
-  transform: scale(1.03);
+/* RESULT */
+.result {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(255,255,255,0.05);
 }
 
-/* OUTPUT */
-.output {
-  margin-top: 15px;
-  padding: 15px;
-  border-radius: 10px;
-  background: rgba(255,255,255,0.05);
+/* HIDDEN */
+.hidden {
+  display: none;
 }
 
 pre {
   white-space: pre-wrap;
-}
-body {
-  min-width: 900px;
 }
