@@ -1,38 +1,32 @@
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: radial-gradient(circle at top, #1e293b, #020617);
-  color: white;
-}
-
-/* center */
+/* MAIN SIDE-BY-SIDE */
 .main {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 40px;
+  flex-wrap: wrap; /* responsive */
 }
 
-/* glass card */
+/* CARDS */
 .card {
-  width: 380px;
-  padding: 30px;
-  border-radius: 20px;
+  width: 100%;
+  max-width: 400px;
+  padding: 25px;
+  border-radius: 16px;
   background: rgba(255,255,255,0.05);
   backdrop-filter: blur(15px);
-  box-shadow: 0 0 40px rgba(0,0,0,0.5);
-  animation: fadeIn 0.6s ease;
+  box-shadow: 0 0 30px rgba(0,0,0,0.4);
 }
 
-/* animation */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px);}
-  to { opacity: 1; transform: translateY(0);}
+/* RIGHT SIDE BIGGER */
+.right {
+  max-width: 450px;
 }
 
-h1 {
+/* HEADINGS */
+h1, h2 {
   text-align: center;
-  margin-bottom: 5px;
 }
 
 p {
@@ -40,10 +34,10 @@ p {
   color: #94a3b8;
 }
 
-/* inputs */
+/* INPUTS */
 select, input, textarea {
   width: 100%;
-  margin-top: 12px;
+  margin-top: 10px;
   padding: 12px;
   border-radius: 10px;
   border: none;
@@ -51,7 +45,7 @@ select, input, textarea {
   color: white;
 }
 
-/* button */
+/* BUTTON */
 button {
   width: 100%;
   margin-top: 15px;
@@ -60,19 +54,17 @@ button {
   border: none;
   background: linear-gradient(135deg, #6366f1, #8b5cf6);
   color: white;
-  font-weight: bold;
   cursor: pointer;
-  transition: 0.3s;
 }
 
 button:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
-/* output */
+/* OUTPUT */
 .output {
-  margin-top: 20px;
-  padding: 12px;
+  margin-top: 15px;
+  padding: 15px;
   border-radius: 10px;
   background: rgba(255,255,255,0.05);
 }

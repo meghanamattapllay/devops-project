@@ -1,26 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Smart Email Generator</title>
-
-  <!-- Modern Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
 <div class="main">
-  <div class="card">
+
+  <!-- LEFT SIDE (FORM) -->
+  <div class="card left">
 
     <h1>✨ Smart Email Generator</h1>
     <p>Create professional emails instantly</p>
 
     <form id="emailForm">
 
-      <!-- Email Type -->
       <label>Email Type</label>
       <select id="type">
         <option>Leave Request</option>
@@ -33,7 +20,6 @@
         <option>Follow-up</option>
       </select>
 
-      <!-- Tone -->
       <label>Tone</label>
       <select id="tone">
         <option>Professional</option>
@@ -41,15 +27,12 @@
         <option>Formal</option>
       </select>
 
-      <!-- Subject -->
       <label>Subject (optional)</label>
       <input type="text" id="subject" placeholder="Enter subject">
 
-      <!-- Recipient -->
       <label>Recipient</label>
       <input type="text" id="recipient" placeholder="e.g., Manager / Sir / HR">
 
-      <!-- Details -->
       <label>Details</label>
       <textarea id="details" placeholder="Enter details here..."></textarea>
 
@@ -57,7 +40,13 @@
 
     </form>
 
-    <!-- Output -->
+  </div>
+
+  <!-- RIGHT SIDE (OUTPUT) -->
+  <div class="card right">
+
+    <h2>📨 Generated Email</h2>
+
     <div class="output">
       <h3>Subject</h3>
       <p id="outSubject"></p>
@@ -69,8 +58,5 @@
     </div>
 
   </div>
-</div>
 
-<script src="script.js"></script>
-</body>
-</html>
+</div>
