@@ -7,7 +7,7 @@ document.getElementById("emailForm").addEventListener("submit", function(e) {
   let recipient = document.getElementById("recipient").value;
   let details = document.getElementById("details").value;
 
-  fetch("http://localhost:5002/generate", {
+  fetch("https://devops-project-96a8.onrender.com/generate", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -22,7 +22,6 @@ document.getElementById("emailForm").addEventListener("submit", function(e) {
   .then(res => res.json())
   .then(data => {
 
-    // If user typed subject → override backend
     let finalSubject = subject ? subject : data.subject;
 
     document.getElementById("outSubject").innerText = finalSubject;
