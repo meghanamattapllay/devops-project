@@ -1,56 +1,26 @@
-name: DevOps Checks
+name: CI Pipeline
 
 on:
   push:
     branches: [main]
 
 jobs:
-
-  frontend:
-    name: Frontend Done 
+  build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
-      - run: echo "Frontend working"
 
-  backend:
-    name: Backend Done 
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - run: echo "Backend working"
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
 
-  api:
-    name: API Connected 
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - run: echo "API working"
+      - name: Install Dependencies
+        run: npm install
 
-  database:
-    name: Database Connected 
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - run: echo "MongoDB working"
+      - name: Run Tests
+        run: npm test
 
-  deployment:
-    name: Deployment Success 
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - run: echo "Deployed on Vercel + Render"
-
-  testing:
-    name: Tests Passed 
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - run: echo "All tests passed"
-
-  lint:
-    name: Code Quality Check 
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - run: echo "Code clean"
+      - name: Build App
+        run: npm run build
