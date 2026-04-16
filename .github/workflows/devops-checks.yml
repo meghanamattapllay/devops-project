@@ -27,7 +27,8 @@ jobs:
       # ✅ Run Backend (REAL)
       - name: Run Backend
         working-directory: backend
-        run: node server.js
+        run: node server.js &
+        sleep 5 # Wait for the backend to start
 
       # ✅ Frontend Install (REAL)
       - name: Install Frontend
