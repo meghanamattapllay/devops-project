@@ -13,50 +13,26 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # ✅ Show files (IMPORTANT DEBUG)
-      - name: Show Files
-        run: ls -R
-
       # ✅ Setup Node
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "18"
 
-      # ✅ Backend Install (SAFE)
+      # ✅ Backend Install (REAL)
       - name: Install Backend
-        run: |
-          if [ -d "server" ]; then
-            cd server
-            npm install || echo "No backend deps"
-          else
-            echo "No server folder"
-          fi
+        working-directory: backend
+        run: npm install
 
-      # ✅ Backend Test (SAFE)
-      - name: Backend Test
-        run: echo "Backend step passed ✅"
+      # ✅ Run Backend (REAL)
+      - name: Run Backend
+        working-directory: backend
+        run: node server.js
 
-      # ✅ Frontend Install (SAFE)
+      # ✅ Frontend Install (REAL)
       - name: Install Frontend
-        run: |
-          if [ -d "client" ]; then
-            cd client
-            npm install || echo "No frontend deps"
-          else
-            echo "No client folder"
-          fi
+        run: npm install
 
-      # ✅ Build React (SAFE)
-      - name: Build React
-        run: |
-          if [ -d "client" ]; then
-            cd client
-            npm run build || echo "No build step"
-          else
-            echo "No client folder"
-          fi
-
-      # ✅ Final
-      - name: Build Success
-        run: echo "Pipeline completed 🚀"
+      # ✅ Build Frontend (REAL)
+      - name: Build Frontend
+        run: npm run build
