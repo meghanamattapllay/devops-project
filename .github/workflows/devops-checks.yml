@@ -30,8 +30,13 @@ jobs:
           sleep 5
 
       # ✅ Frontend install
-      - name: Install Frontend
+      - name: Install Frontend Dependencies
+        working-directory: frontend
         run: npm install
+
+      - name: Build React App
+        working-directory: frontend
+        run: npm run build
 
       # ✅ Build frontend (safe)
       - name: Build Frontend
